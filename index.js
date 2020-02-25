@@ -1,9 +1,8 @@
 $(function() {
 
     $('ul').on('click', '.shopping-item-toggle', function(event) {
-        let targetItem = $(this).closest('li').find('.shopping-item');
         let pressedKB = this.attr('aria-pressed') === 'true';
-        targetItem.toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
     });
 
     $('ul').on('click', '.shopping-item-delete', function(event) {
