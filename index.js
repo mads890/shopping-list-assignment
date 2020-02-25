@@ -1,7 +1,7 @@
 $(function() {
 
     $('ul').on('click', '.shopping-item-toggle', function(event) {
-        let targetItem = $(this).closest('.shopping-item');
+        let targetItem = $(this).siblings('.shopping-item');
         let pressedKB = this.attr('aria-pressed') === 'true';
         targetItem.toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
     });
@@ -10,7 +10,7 @@ $(function() {
         $(this).closest('li').remove();
     });
 
-    $('#js-shopping-list-form').on('submit click', function(event) {
+    $('#js-shopping-list-form').on('submit', function(event) {
         event.preventDefault();
         let listItem = $(this).find('#shopping-list-entry').val();
         $('.shopping-list').append(`<li><span class="shopping-item">${listItem}</span><div class="shopping-item-controls"><button class="shopping-item-toggle"><span class="button-label">check</span></button><button class="shopping-item-delete"><span class="button-label">delete</span></button></div></li>`)
