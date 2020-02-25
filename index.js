@@ -1,7 +1,7 @@
 $(function() {
 
     $('ul').on('click', '.shopping-item-toggle', function(event) {
-        let targetItem = $(this).closest('.shopping-item');
+        let targetItem = $(this).closest('li').find('.shopping-item');
         let pressedKB = this.attr('aria-pressed') === 'true';
         targetItem.toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
     });
