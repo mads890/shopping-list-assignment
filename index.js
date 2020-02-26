@@ -2,7 +2,8 @@ $(function() {
 
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
         let pressedKB = this.attr('aria-pressed') === 'true';
-        $(this).closest('.shopping-item-controls').sibling('.shopping-item').toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
+        let targetItem = $(this).closest('.shopping-item-controls').sibling('.shopping-item');
+        targetItem.toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
     });
 
     $('ul').on('click', '.shopping-item-delete', function(event) {
