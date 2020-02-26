@@ -2,9 +2,8 @@
 
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
       console.log(event);
-        let pressedKB = this.attr('aria-pressed') === 'true';
         let targetItem = $(this).closest('.shopping-item-controls').sibling('.shopping-item');
-        targetItem.toggleClass('shopping-item__checked').attr('aria-pressed', !pressedKB);
+        targetItem.toggleClass('shopping-item__checked');
     });
 
     $('ul').on('click', '.shopping-item-delete', function(event) {
