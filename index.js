@@ -1,8 +1,8 @@
 $(function() {
 
-    $('document').on('click', '.shopping-item-toggle', function(event) {
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
         console.log(event);
-        let targetItem = $(this).closest('.shopping-item-controls').sibling('.shopping-item');
+        let targetItem = $(this).closest('.shopping-item-controls').siblings('.shopping-item');
         targetItem.toggleClass('shopping-item__checked');
     });
 
